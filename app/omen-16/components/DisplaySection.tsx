@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 
@@ -16,7 +16,7 @@ export default function DisplaySection() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   // Staggered animation variants for children
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ export default function DisplaySection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, x: -40 },
     visible: { 
       opacity: 1, 
